@@ -3,6 +3,9 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
+        //Statutul
+        String statut = JOptionPane.showInputDialog("What is your rank among the mobsters ?");
+
         //Asking for the number of pages
         String pages = JOptionPane.showInputDialog("How many pages do you want to be printed ?");
         int npages = Integer.parseInt(pages);
@@ -34,8 +37,8 @@ public class Main {
         Toner toner = new Toner(intensity, color);
 
         //starting printing what the user wanted
-        ComputerPrinter computerPrinter = new ComputerPrinter(toner);
-        computerPrinter.print(npages, method);
+        ComputerPrinter computerPrinter = new ComputerPrinter(toner, statut);
+        computerPrinter.print(npages, method, statut);
 
     }
 }
